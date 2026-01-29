@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head><meta charset="utf-8"><title>چگالی</title></head>
+<body style="font-family:tahoma; text-align:center;">
+    <h2>آزمایشگاه چگالی</h2>
+    <input type="number" id="mass" placeholder="جرم (g)">
+    <input type="number" id="vol" placeholder="حجم (cm3)">
+    <button onclick="calc()">محاسبه</button>
+    <h3 id="res"></h3>
+    <script>
+        function calc() {
+            let m = document.getElementById('mass').value;
+            let v = document.getElementById('vol').value;
+            let d = m/v;
+            let status = d < 1 ? "شناور می‌ماند 🌊" : "غرق می‌شود ⚓";
+            document.getElementById('res').innerText = "چگالی: " + d.toFixed(2) + " - " + status;
+        }
+    </script>
+</body>
+</html>
